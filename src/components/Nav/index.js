@@ -4,6 +4,8 @@ import { capitalizeFirstLetter } from "../../utils/helpers";
 //using props from app.js for categories changes
 function Nav(props) {
   const { categories = [], setCurrentCategory, currentCategory } = props;
+
+  // Using useEffect to change the browser title, needed a hook o re-render automatically.
   useEffect(() => {
     document.title = capitalizeFirstLetter(currentCategory.name);
   }, [currentCategory]);
